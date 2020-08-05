@@ -36,5 +36,4 @@ For running docker compose: build/dev/docker-compose.yml
 Sample username is `a_username` with password `a_password`.
 
 
-# Team-Project-Final-Web-Application
 
