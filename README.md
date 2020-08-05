@@ -6,6 +6,12 @@ Contributors: Payal Kevin Bhalala, Chinghao Sun and Jeremy Langenderfer
 [Feature_1_jl822](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/jl822)  
 [Feature_1_Screenshots](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/jl822/Screenshots)    
 
+## Feature 1
+Jeremy Langenderfer: Created a calculator with maths function and created Api endpoints using java script chart. Screenshots for the same are also being added.
+## Feature 2
+Chinghao Sun: Created login and registration process for the project.
+## Feature 3
+Payal Kevin Bhalala: Created calendar with it's function using docker and also added function to the calender like adding task. 
 
 # flask-calendar
 
