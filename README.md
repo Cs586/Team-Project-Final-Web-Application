@@ -2,8 +2,8 @@
 Contributors: Payal Kevin Bhalala, Chinghao Sun and Jeremy Langenderfer
 
 # Links to Contributor Assigned Tasks
-[Feature_1_jl822](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/jl822)
-[Feature_1_Screenshots](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/jl822/Screenshots)
+[Feature_1_jl822](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/jl822)  
+[Feature_1_Screenshots](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/jl822/Screenshots)    
 
 
 
