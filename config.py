@@ -1,4 +1,4 @@
-import flask_calendar.constants as constants
+import flask_app.constants as constants
 
 DEBUG = True
 DATA_FOLDER = "data"

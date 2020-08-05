@@ -1,6 +1,6 @@
 import pytest
 from flask.testing import FlaskClient
-from flask_calendar.constants import SESSION_ID
+from flask_app.constants import SESSION_ID
 
 
 @pytest.mark.parametrize(

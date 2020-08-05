@@ -12,6 +12,6 @@ services:
       - ../..:/code
       - ../..:/opt/flask-calendar
       - ~/.bash_history.flask-calendar:/home/flask-calendar/.bash_history
-    command: "bash -c 'exec python3 -m flask_calendar.app'"
+    command: "bash -c 'exec python3 -m flask_app.app'"
     ports:
         - "127.0.0.1:5000:5000"

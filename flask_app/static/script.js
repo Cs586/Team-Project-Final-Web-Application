@@ -20,7 +20,7 @@ $(document).ready(function() {
   var SHOW_GRID = true;
 
 
-  d3.csv('Addition.csv').then(function(rows) {
+  d3.csv('/static/Addition.csv').then(function(rows) {
 
     var data = rows.map(function(row) {
       return {

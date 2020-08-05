@@ -5,8 +5,8 @@ import os
 from typing import Dict, cast
 
 import config  # noqa: F401
-from flask import Flask, Response, send_from_directory
-from flask_calendar.actions import (
+from flask import Flask, Response, send_from_directory, render_template
+from flask_app.actions import (
     delete_task_action,
     do_login_action,
     edit_task_action,
@@ -18,8 +18,9 @@ from flask_calendar.actions import (
     save_task_action,
     update_task_action,
     update_task_day_action,
+    open_calc_plots_action,
 )
-from flask_calendar.app_utils import task_details_for_markup
+from flask_app.app_utils import task_details_for_markup
 
 
 def create_app(config_overrides: Dict = None) -> Flask:
@@ -79,9 +80,17 @@ def create_app(config_overrides: Dict = None) -> Flask:
         hide_repetition_task_instance_action,
         methods=["POST"],
     )
+    app.add_url_rule("/calculator_plots", "open_calc_plots_action", open_calc_plots_action, methods=["GET"])
+    # @app.route("/")
+    # def index():
+    #     return render_template("index.html")
+
+
+    # @app.route("/calculator_plots")
+    # def index2():
+    #     return render_template("index.html")
 
     app.jinja_env.filters["task_details_for_markup"] = task_details_for_markup
-
     return app
 
 

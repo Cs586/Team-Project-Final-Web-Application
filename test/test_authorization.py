@@ -1,6 +1,6 @@
 import pytest
-from flask_calendar.authorization import Authorization
-from flask_calendar.calendar_data import CalendarData
+from flask_app.authorization import Authorization
+from flask_app.calendar_data import CalendarData
 
 EXISTING_USERNAME = "a_username"
 

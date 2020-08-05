@@ -2,7 +2,7 @@ from typing import Dict
 from unittest.mock import ANY, MagicMock, patch
 
 import pytest
-from flask_calendar.calendar_data import CalendarData
+from flask_app.calendar_data import CalendarData
 
 
 @pytest.fixture
@@ -102,7 +102,7 @@ def test_joins_repetitive_tasks_with_normal_ones(calendar_data: CalendarData, sa
     assert tasks[month_str]["6"][1]["repetition_type"] == CalendarData.REPETITION_TYPE_WEEKLY
 
 
-@patch("flask_calendar.calendar_data.CalendarData._save_calendar")
+@patch("flask_app.calendar_data.CalendarData._save_calendar")
 def test_creates_new_normal_task(save_calendar_mock: MagicMock, calendar_data: CalendarData) -> None:
     year = 2017
     month = 12
@@ -148,7 +148,7 @@ def test_creates_new_normal_task(save_calendar_mock: MagicMock, calendar_data: C
     assert data["tasks"]["normal"][str(year)][str(month)][str(day)][0]["title"] == title
 
 
-@patch("flask_calendar.calendar_data.CalendarData._save_calendar")
+@patch("flask_app.calendar_data.CalendarData._save_calendar")
 def test_creates_task_with_start_and_end_dates(save_calendar_mock: MagicMock, calendar_data: CalendarData) -> None:
     year = 2017
     month = 12
