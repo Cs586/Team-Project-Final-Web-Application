@@ -18,6 +18,11 @@
             title="Previous month" />
         <input type="button" class="header-button" value="&gt;" onclick="window.location='{{ next_month_link }}'"
             title="Next month" />
+{#        <input type="button" class="header-button" value="&gt;" onclick="window.location='/calculator_plots'"#}
+{#            title="Open Calculator D3 Plots" />#}
+        <button onclick="window.location.href='/calculator_plots';">
+          Open Calculator D3 Plots
+        </button>
         <div class="current-date">
             {{ month_name }} {{ year }}
         </div>

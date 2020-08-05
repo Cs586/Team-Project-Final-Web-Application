@@ -4,9 +4,9 @@ import time
 from datetime import datetime
 from typing import Dict, List, Optional, cast
 
-import flask_calendar.constants as constants
+import flask_app.constants as constants
 from flask import current_app
-from flask_calendar.gregorian_calendar import GregorianCalendar
+from flask_app.gregorian_calendar import GregorianCalendar
 
 KEY_TASKS = "tasks"
 KEY_USERS = "users"

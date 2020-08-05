@@ -5,10 +5,10 @@ from typing import Any, Callable
 
 from cachelib.simple import SimpleCache
 from flask import abort, current_app, redirect, request
-from flask_calendar.authorization import Authorization
-from flask_calendar.calendar_data import CalendarData
-from flask_calendar.constants import SESSION_ID
-from flask_calendar.gregorian_calendar import GregorianCalendar
+from flask_app.authorization import Authorization
+from flask_app.calendar_data import CalendarData
+from flask_app.constants import SESSION_ID
+from flask_app.gregorian_calendar import GregorianCalendar
 
 cache = SimpleCache()
 

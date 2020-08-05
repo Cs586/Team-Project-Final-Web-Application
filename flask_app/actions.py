@@ -1,9 +1,9 @@
 import re
 from typing import Optional, cast  # noqa: F401
 
-import flask_calendar.constants as constants
+import flask_app.constants as constants
 from flask import abort, current_app, g, jsonify, make_response, redirect, render_template, request
-from flask_calendar.app_utils import (
+from flask_app.app_utils import (
     add_session,
     authenticated,
     authorized,
@@ -12,9 +12,9 @@ from flask_calendar.app_utils import (
     next_month_link,
     previous_month_link,
 )
-from flask_calendar.authentication import Authentication
-from flask_calendar.calendar_data import CalendarData
-from flask_calendar.gregorian_calendar import GregorianCalendar
+from flask_app.authentication import Authentication
+from flask_app.calendar_data import CalendarData
+from flask_app.gregorian_calendar import GregorianCalendar
 from werkzeug.wrappers import Response
 
 
@@ -355,3 +355,17 @@ def hide_repetition_task_instance_action(calendar_id: str, year: str, month: str
     )
 
     return cast(Response, jsonify({}))
+
+
+def open_calc_plots_action() -> Response:
+    # username = get_session_username(session_id=str(request.cookies.get(constants.SESSION_ID)))
+    # authentication = get_authentication()
+    # user_data = authentication.user_data(username)
+    # return cast(Response, render_template("../Calculator/index.html"))
+    # return cast(
+    #         Response,
+    #         render_template(
+    #             "../Calculator/index.html"
+    #         ))
+    return render_template("index.html")
+

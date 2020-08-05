@@ -1,4 +1,4 @@
-from flask_calendar import app as flask_app
+from flask_app import app as flask_app
 
 app = flask_app.create_app()
 

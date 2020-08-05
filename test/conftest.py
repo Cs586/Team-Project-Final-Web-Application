@@ -1,7 +1,7 @@
 import pytest
 from flask import Flask
 from flask.testing import FlaskClient
-from flask_calendar.app import create_app
+from flask_app.app import create_app
 
 
 @pytest.fixture

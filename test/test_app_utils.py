@@ -1,6 +1,6 @@
 import pytest
 from flask import Flask
-from flask_calendar.app_utils import task_details_for_markup
+from flask_app.app_utils import task_details_for_markup
 
 SOURCE_STRING_PLACEHOLDER = "pre {} post"
 EXPECTED_STRING_PLACEHOLDER = 'pre <a href="{}" target="_blank">{}</a> post'
