@@ -102,11 +102,8 @@ def test_joins_repetitive_tasks_with_normal_ones(calendar_data: CalendarData, sa
     assert tasks[month_str]["6"][1]["repetition_type"] == CalendarData.REPETITION_TYPE_WEEKLY
 
 
-<<<<<<< HEAD
 @patch("flask_calendar.calendar_data.CalendarData._save_calendar")
-=======
 @patch("flask_app.calendar_data.CalendarData._save_calendar")
->>>>>>> 82d3c8c95ff63faab947fbb8a8efc1e16e96ac76
 def test_creates_new_normal_task(save_calendar_mock: MagicMock, calendar_data: CalendarData) -> None:
     year = 2017
     month = 12
@@ -152,11 +149,8 @@ def test_creates_new_normal_task(save_calendar_mock: MagicMock, calendar_data: C
     assert data["tasks"]["normal"][str(year)][str(month)][str(day)][0]["title"] == title
 
 
-<<<<<<< HEAD
 @patch("flask_calendar.calendar_data.CalendarData._save_calendar")
-=======
 @patch("flask_app.calendar_data.CalendarData._save_calendar")
->>>>>>> 82d3c8c95ff63faab947fbb8a8efc1e16e96ac76
 def test_creates_task_with_start_and_end_dates(save_calendar_mock: MagicMock, calendar_data: CalendarData) -> None:
     year = 2017
     month = 12
