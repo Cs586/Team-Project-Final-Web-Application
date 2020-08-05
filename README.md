@@ -27,28 +27,6 @@ For running docker compose: build/dev/docker-compose.yml
 
 Sample username is `a_username` with password `a_password`.
 
-## Miscellaneous
 
-### User creation/deletion
-
-As there is no admin interface, to create or delete users you should create a python file with code similar to the following example:
-
-```python
-from authentication import Authentication
-import config
-
-
-authentication = Authentication(data_folder=config.USERS_DATA_FOLDER, password_salt=config.PASSWORD_SALT)
-
-# Create a user
-authentication.add_user(
-    username="a username",
-    plaintext_password="a plain password",
-    default_calendar="a default calendar id"
-)
-
-# Delete a user
-authentication.delete_user(username="a username")
-```
 # Team-Project-Final-Web-Application
 
