@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Chart for Addition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- Load jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Load Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+
+    <!-- Load D3.js to read csv files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+  </head>
+
+  <body>
+    <button onclick="window.location.href='/';">
+      Go Back to Calendar
+    </button>
+    <canvas id="container" style="width:100%; height:400px;"></canvas>
+
+    <p style="font-family: Helvetica; color: #333; padding: 1em 2em; font-size: 12px">
+      Sources: IS 601-850 Addition.csv table of values
+      <br>
+
+    </p>
+
+{#    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">#}
+    <script >
+        $(document).ready(function() {
+
+          var TITLE = 'Addition.csv values from calculator project';
+
+          var POINT_X = 'Value 1';
+          var POINT_X_PREFIX = '';
+          var POINT_X_POSTFIX = '';
+
+          var POINT_Y = 'Value 2';
+          var POINT_Y_PREFIX = '';
+          var POINT_Y_POSTFIX = '';
+
+          var POINT_NAME = 'Result';
+          var POINT_COLOR = 'rgba(0,0,255,0.7)';
+          var POINT_RADIUS = 5;
+
+          var X_AXIS = 'Value 1';
+          var Y_AXIS = 'Value 2';
+
+          var SHOW_GRID = true;
+
+
+          d3.csv('/static/Addition.csv').then(function(rows) {
+
+            var data = rows.map(function(row) {
+              return {
+                x: row[POINT_X],
+                y: row[POINT_Y],
+                name: row[POINT_NAME]
+              }
+            })
+
+                var scatterChartData = {
+                    datasets: [{
+                        label: 'My First dataset',
+                        backgroundColor: POINT_COLOR,
+                data: data,
+                pointRadius: POINT_RADIUS,
+                pointHoverRadius:  POINT_RADIUS + 2,
+                    }]
+            };
+
+            var ctx = document.getElementById('container').getContext('2d');
+
+            Chart.Scatter(ctx, {
+              data: scatterChartData,
+              options: {
+                title: {
+                  display: true,
+                  text: TITLE,
+                  fontSize: 14,
+                },
+                legend: {
+                  display: false,
+                },
+                scales: {
+                  xAxes: [{
+                    scaleLabel: {
+                      display: true,
+                      labelString: X_AXIS
+                    },
+                    gridLines: {
+                      display: SHOW_GRID,
+                    },
+                    ticks: {
+                      callback: function(value, index, values) {
+                        return POINT_X_PREFIX + value.toLocaleString() + POINT_X_POSTFIX;
+                      }
+                    }
+                  }],
+                  yAxes: [{
+                    scaleLabel: {
+                      display: true,
+                      labelString: Y_AXIS
+                    },
+                    gridLines: {
+                      display: SHOW_GRID,
+                    },
+                    ticks: {
+                      callback: function(value, index, values) {
+                        return POINT_Y_PREFIX + value.toLocaleString() + POINT_Y_POSTFIX;
+                      }
+                    }
+                  }]
+                },
+                tooltips: {
+                  displayColors: false,
+                  callbacks: {
+                    title: function(tooltipItem, all) {
+                      return [
+                        all.datasets[tooltipItem[0].datasetIndex].data[tooltipItem[0].index].name,
+                      ]
+                    },
+                    label: function(tooltipItem, all) {
+                      return [
+                        X_AXIS + ': ' + POINT_X_PREFIX + tooltipItem.xLabel.toLocaleString() + POINT_X_POSTFIX,
+                        Y_AXIS + ': ' + POINT_Y_PREFIX + tooltipItem.yLabel.toLocaleString() + POINT_Y_POSTFIX
+                      ]
+                    }
+                  }
+                }
+              }
+            });
+
+          });
+        });
+    </script>
+
+  </body>
+
+</html>
