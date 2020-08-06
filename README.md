@@ -9,13 +9,15 @@ Calendar has used flask-calendar while calculator plots is being setup using d3j
 [Feature_1_jl822](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/jl822)  
 [Feature_1_Screenshots](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/jl822/Screenshots)  
 [Feature_2_Chinghao Sun](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/cs586)  
+[Feature_2_Screenshots](https://github.com/Cs586/Team-Project-Final-Web-Application/tree/master/Screenshots/feature_second)  
 
 ## Feature 1
 Jeremy Langenderfer: Created a calculator with maths function and created Api endpoints using java script chart. Screenshots for the same are also being added.
 ## Feature 2
-Chinghao Sun: Created login and registration process for the project.
+Chinghao Sun: Created login and registration process for the project.  
+
 ## Feature 3
-Payal Kevin Bhalala: Created calendar with it's function using docker and also added function to the calender like adding task. 
+Payal Kevin Bhalala: Created calendar with it's function using docker and also added function to the calender like adding task.   
 
 # flask-calendar
 
@@ -45,5 +47,15 @@ For running docker compose: build/dev/docker-compose.yml
 
 Sample username is `a_username` with password `a_password`.
 
+### Running Feature2
+1. Added ".evn" in sever file
+2. copy the content below to paste in the file 
+"FLASK_APP=server  
+FLASK_ENV=development  
+SECRET_KEY=zhang  
+SQLALCHEMY_DATABASE_URI=mysql+mysqlconnector://root:root@db:3306/calculatorApp  
+SENDGRID_API_KEY=xSCLY7AJQZCJwuv2JBKsPg  
+SECURITY_PASSWORD_SALT=MAYFORCEBEWITHYOU"  
+3. run the docker-compose docker-compose.yml outside the folder
 
 
